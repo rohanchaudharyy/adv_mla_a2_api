@@ -10,8 +10,8 @@ app = FastAPI(
 )
 
 # Load models
-rain_model = joblib.load("36120-25SP-25731542-experiment-rain.pkl")
-precip_model = joblib.load("36120-25SP-25731542-experiment-3dayprep-best.pkl")
+rain_model = load("36120-25SP-25731542-experiment-rain.pkl")
+precip_model = load("36120-25SP-25731542-experiment-3dayprep-best.pkl")
 
 rain_features = ['temperature_2m_', 'relative_humidity_2m_', 'dew_point_2m_',
        'apparent_temperature_', 'cloud_cover_', 'surface_pressure_hPa',
