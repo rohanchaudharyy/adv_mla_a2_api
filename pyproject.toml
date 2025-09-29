@@ -2,7 +2,7 @@
 name = "sydney-weather-api"
 version = "0.1.0"
 description = "FastAPI app to predict rain and cumulative precipitation in Sydney"
-authors = ["Your Name <youremail@example.com>"]
+authors = ["Rohan Chaudhary rohan.chaudhary@student.uts.edu.au"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
