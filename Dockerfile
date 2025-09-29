@@ -1,27 +1,21 @@
-# Use official Python 3.12 image
+# Use official Python image
 FROM python:3.12-slim
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
-ENV APP_HOME=/app
+WORKDIR /app
 
-# Create app directory
-WORKDIR $APP_HOME
-
-# Copy requirements first for caching
+# Copy requirements and install
 COPY requirements.txt .
-
-# Install dependencies
 RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the app code
-COPY app.py .
-COPY 36120-25SP-25731542-experiment-rain.pkl .
-COPY 36120-25SP-25731542-experiment-3dayprep-best.pkl .
+# Copy app and models
+COPY app /app/app
+COPY models /app/models
 
-# Expose the port for FastAPI
+# Expose port for FastAPI
 EXPOSE 8000
 
-# Command to run the app with uvicorn
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Command to run the API
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

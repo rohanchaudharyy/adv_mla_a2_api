@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "sydney-weather-api"
+version = "0.1.0"
+description = "FastAPI app to predict rain and cumulative precipitation in Sydney"
+authors = ["Your Name <youremail@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.109.0"
+uvicorn = "^0.23.0"
+pandas = "2.2.2"
+numpy = "1.26.4"
+scikit-learn = "1.5.2"
+joblib = "^1.5.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
